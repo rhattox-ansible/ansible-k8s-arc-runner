@@ -1,4 +1,3 @@
 .vscode/
 
-roles/chart/defaults/main.yaml
 roles/arc/defaults/main.yaml
