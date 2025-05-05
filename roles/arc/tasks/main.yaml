@@ -1,10 +1,10 @@
 - name: Add Helm repo for actions-runner-controller
-  community.kubernetes.helm_repository:
+  kubernetes.core.helm_repository:
     name: actions-runner-controller
     repo_url: https://actions-runner-controller.github.io/actions-runner-controller
 
 - name: Install or upgrade actions-runner-controller Helm chart
-  community.kubernetes.helm:
+  kubernetes.core.helm:
     name: actions-runner-controller
     chart_ref: actions-runner-controller/actions-runner-controller
     release_namespace: actions-runner-system
