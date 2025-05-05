@@ -1,0 +1,18 @@
+- name: Add Helm repo for actions-runner-controller
+  community.kubernetes.helm_repository:
+    name: actions-runner-controller
+    repo_url: https://actions-runner-controller.github.io/actions-runner-controller
+
+- name: Install or upgrade actions-runner-controller Helm chart
+  community.kubernetes.helm:
+    name: actions-runner-controller
+    chart_ref: actions-runner-controller/actions-runner-controller
+    release_namespace: actions-runner-system
+    create_namespace: true
+    values_files:
+      - "{{ role_path }}/templates/arc-values.yaml"
+    values:
+      authSecret:
+        create: true
+        github_token: "{{ github_token }}"
+    wait: true
