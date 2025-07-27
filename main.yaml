@@ -1,4 +1,4 @@
-- name: Argocd K8s Installation
+- name: Arc Runner K8s Installation
   hosts: localhost
   become: true
   gather_facts: true
@@ -6,3 +6,4 @@
     ansible_python_interpreter: /opt/ansible-venv/bin/python
   roles:
     - cert
+    - arc

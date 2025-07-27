@@ -1,9 +1,9 @@
-- name: Add Helm repo for actions-runner-controller
+- name: Add Helm repository for ARC (actions-runner-controller)
   kubernetes.core.helm_repository:
     name: actions-runner-controller
     repo_url: https://actions-runner-controller.github.io/actions-runner-controller
 
-- name: Install or upgrade actions-runner-controller Helm chart
+- name: Deploy or upgrade ARC (actions-runner-controller) via Helm
   kubernetes.core.helm:
     name: actions-runner-controller
     chart_ref: actions-runner-controller/actions-runner-controller
